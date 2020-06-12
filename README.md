@@ -1,7 +1,6 @@
 # curso-django
 Código desenvolvido no módulo de Django do [Site Python Pro](www.python.pro.br)
 
-Aplicação disponível em https://pythonprodjango.herokuapp.com/
 
 [![Build Status](https://travis-ci.com/andremenezees/curso-django.svg?branch=master)](https://travis-ci.com/andremenezees/curso-django)
 
