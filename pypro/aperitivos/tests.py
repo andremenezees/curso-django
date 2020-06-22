@@ -10,7 +10,7 @@ def resp(client):
 
 
 def test_status_code(resp):
-    assert resp.status_code==200
+    assert resp.status_code == 200
 
 
 def test_titulo_video(resp):
@@ -19,5 +19,3 @@ def test_titulo_video(resp):
 
 def test_conteudo_video(resp):
     assert_contains(resp, '<iframe src="https://player.vimeo.com/video/431606560"')
-
-
