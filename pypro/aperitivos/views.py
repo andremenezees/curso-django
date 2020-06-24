@@ -11,6 +11,7 @@ class Video:
     def get_absolute_url(self):
         return reverse('aperitivos:video', args=(self.slug,))
 
+
 videos = [
     Video('gato-tapa', 'Gato do tapa', '431606560'),
     Video('crazy-cat', 'Crazy cat', '84369192'),
