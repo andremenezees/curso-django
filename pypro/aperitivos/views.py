@@ -1,6 +1,25 @@
 from django.shortcuts import render
 
+class Video:
+    def __init__(self, slug, titulo, vimeo_id):
+        self.slug = slug
+        self.titulo = titulo
+        self.vimeo_id = vimeo_id
+
+
+videos = [
+    Video('gato-tapa', 'Gato do tapa', '431606560'),
+    Video('crazy-cat', 'Crazy cat', '84369192'),
+]
+
+videos_dct = {v.slug: v for v in videos}
+
+
+def indice(request):
+    return render(request, 'aperitivos/indice.html', context={'videos': videos})
+
 
 def video(request, slug):
-    video = {'titulo': 'Videos de gatos', 'vimeo_id': '431606560'}
+
+    video = videos_dct[slug]
     return render(request, 'aperitivos/video.html', context={'video': video})
