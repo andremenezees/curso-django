@@ -39,30 +39,7 @@
 
 {% block body %} {% endblock body %}
 
-<footer class="main-footer mt-5 pt-4 text-light">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h3>Entre em contato</h3>
-                <address>
-                    55 47 99945-0882
-                    <br/>
-                    <a href="mailto:andrr96@gmail.com"class="text-light">andrr96@gmail.com</a>
-                </address>
-            </div>
+{% include 'base/footer.html' with contato_email='andrr96@gmail.com' only %}
 
-        </div>
-    </div>
-    <div class="rights pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    {% now 'Y' %}
-                </div>
-            </div>
-        </div>
-    </div>
-
-</footer>
-  </body>
+ </body>
 </html>
