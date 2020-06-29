@@ -9,4 +9,3 @@ class Modulo(OrderedModel):
 
     class Meta(OrderedModel.Meta):
         pass
-
