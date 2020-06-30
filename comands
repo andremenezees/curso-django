@@ -2,3 +2,19 @@
 
 mng collectstatic
 
+#Comando para fazer as novas migracoes
+
+mng makemigrations
+
+#Comando seguinte ao acima, para aplicar as migracoes no banco de dados
+
+mng migrate
+
+
+#Relacionar modulos com videos.
+
+"""
+Até o momento so foram criadas as abas dos videos e os modulos com suas descricoes, abaixo esta como fazer para
+relacionar os modulos com videos.
+"""
+#https://docs.djangoproject.com/en/2.2/topics/db/examples/many_to_one/
