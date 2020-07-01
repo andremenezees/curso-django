@@ -1,4 +1,4 @@
-from pypro.modulos.models import Modulo
+from pypro.modulos.models import Modulo, Conteudo
 
 
 def listar_modulos_ordenados():
@@ -16,3 +16,7 @@ def encontrar_modulo(slug: str) -> Modulo:
 
 def listar_conteudos_de_modulos_ordenados(modulo: Modulo):
     return list(modulo.conteudo_set.order_by('order').all())
+
+
+def encontrar_conteudo(slug):
+    return Conteudo.objects.get(slug=slug)
