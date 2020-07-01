@@ -18,7 +18,7 @@
                 <h2>Conteudos dos módulos</h2>
                 <ol>
                     {% for conteudo in conteudos %}
-                        <li>{{ conteudo.titulo }}</li>
+                        <li><a href="{{ conteudo.get_absolute_url }}">{{ conteudo.titulo }}</a></li>
                     {% endfor %}
                 </ol>
 		    </div>

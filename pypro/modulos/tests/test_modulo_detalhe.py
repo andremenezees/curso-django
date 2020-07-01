@@ -37,3 +37,8 @@ def test_publico(resp, modulo: Modulo):
 def test_conteudos_titulos(resp, conteudos):
     for conteudo in conteudos:
         assert_contains(resp, conteudo.titulo)
+
+
+def test_conteudos_links(resp, conteudos):
+    for conteudo in conteudos:
+        assert_contains(resp, conteudo.get_absolute_url())
