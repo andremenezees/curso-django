@@ -12,3 +12,7 @@ def listar_modulos_ordenados():
 
 def encontrar_modulo(slug: str) -> Modulo:
     return Modulo.objects.get(slug=slug)
+
+
+def listar_conteudos_de_modulos_ordenados(modulo: Modulo):
+    return list(modulo.conteudo_set.order_by('order').all())

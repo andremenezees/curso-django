@@ -15,6 +15,12 @@
                     <dt>Descrição</dt>
                     <dd>{{ modulo.descricao }}</dd>
                 </dl>
+                <h2>Conteudos dos módulos</h2>
+                <ol>
+                    {% for conteudo in conteudos %}
+                        <li>{{ conteudo.titulo }}</li>
+                    {% endfor %}
+                </ol>
 		    </div>
 	    </div>
     </div>

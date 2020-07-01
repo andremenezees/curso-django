@@ -18,3 +18,14 @@ Até o momento so foram criadas as abas dos videos e os modulos com suas descric
 relacionar os modulos com videos.
 """
 #https://docs.djangoproject.com/en/2.2/topics/db/examples/many_to_one/
+
+
+#Relacionar os modulos com os conteudos
+
+"""
+Neste doc tem-se a forma de relacionar através de um gerente(no caso a gerente é o conteudo) as diferentes apps, neste
+caso as apps serão as criadas até agora base, apertivos e modulos, é possivel relacionar todas de uma vez, uma a uma ou
+uma com varias.
+
+"""
+# https://docs.djangoproject.com/en/2.2/ref/models/relations/#related-objects-reference
