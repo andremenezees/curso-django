@@ -26,5 +26,5 @@ def test_titulos(resp, conteudo: Conteudo):
     assert_contains(resp, conteudo.titulo)
 
 
-def test_vimeo(resp, conteudo:Conteudo):
+def test_vimeo(resp, conteudo: Conteudo):
     assert_contains(resp, f'<iframe src="https://player.vimeo.com/video/{ conteudo.vimeo_id }"')
