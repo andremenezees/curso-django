@@ -4,6 +4,13 @@
 {% block description %}Página com vídeos de gatos{% endblock description %}
 
 {% block body %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'base:home' %}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{ conteudo.modulo.get_absolute_url }}">{{ conteudo.modulo.titulo }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ conteudo.titulo }}</li>
+  </ol>
+</nav>
 
     <div class="container">
 	    <div class="row">
