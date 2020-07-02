@@ -29,3 +29,26 @@ uma com varias.
 
 """
 # https://docs.djangoproject.com/en/2.2/ref/models/relations/#related-objects-reference
+
+
+#Django extensions
+
+"""
+Através do django extension e possivel utilizar o shell do django de forma mais eficiente. Com os comandos neste caso
+mng shell_plus.
+
+Documentação do django extensions: https://django-extensions.readthedocs.io/en/latest/installation_instructions.html
+
+"""
+
+#Breadcrumb
+
+"""
+Através do breadcrumb é possivel adicionar ao layout da pagina escolhida o caminho usado para chegar essa pagina.
+No caso deste projeto através do breadcrumb é possivel dentro da pagina do video ver o caminho feito para chegar lá,
+ou seja ver em qual módulo este vídeo está. Também é possivel adicionar URLS aos caminhos.
+
+Documentação: https://getbootstrap.com/docs/4.4/components/breadcrumb/
+
+"""
+

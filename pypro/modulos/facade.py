@@ -19,4 +19,4 @@ def listar_conteudos_de_modulos_ordenados(modulo: Modulo):
 
 
 def encontrar_conteudo(slug):
-    return Conteudo.objects.get(slug=slug)
+    return Conteudo.objects.select_related('modulo').get(slug=slug)

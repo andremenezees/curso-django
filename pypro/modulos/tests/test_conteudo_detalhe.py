@@ -28,3 +28,7 @@ def test_titulos(resp, conteudo: Conteudo):
 
 def test_vimeo(resp, conteudo: Conteudo):
     assert_contains(resp, f'<iframe src="https://player.vimeo.com/video/{ conteudo.vimeo_id }"')
+
+
+def test_modulo_breadcrumb(resp, modulo: Modulo):
+    assert_contains(resp, f'<li class="breadcrumb-item"><a href="{modulo.get_absolute_url()}">{modulo.titulo}</a></li>')
