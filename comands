@@ -52,3 +52,22 @@ Documentação: https://getbootstrap.com/docs/4.4/components/breadcrumb/
 
 """
 
+#QuerySet
+
+"""
+prefetch_realeted() serve para buscar previamente os dados de uma app que esta dentro de outra, a diferenca entre
+prefetch_realeted() e select_realeted() é que neste caso estamos pegando o Conteudo que está dentro do modulo.
+
+                Conteudo.objects.select_related('modulo').get(slug=slug)
+
+
+Neste outro caso estamos pegando o conteudo_set do Modulo ou seja faz a mesma coisa que o select porem com variaveis de
+lados opostos.
+
+
+                Modulo.objects.order_by('order').all().prefetch_related('conteudo_set')
+
+
+
+Documentação: https://docs.djangoproject.com/en/3.0/ref/models/querysets/#prefetch-related
+"""
