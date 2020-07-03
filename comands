@@ -142,3 +142,30 @@ Na variavel alunos os usuarios estão sendo salvos através de uma tabela interm
 muitos para muitos.
 
 """
+
+Meta
+
+"""
+A classe meta neste projeto teve a utilidade de não permitir que o mesmo usuario entre duas vezes em uma turma, através
+do comando unique_together.
+
+            class Matricula(models.Model):
+                data = models.DateTimeField(auto_now_add=True)
+                usuario = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+                turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
+
+                class Meta:
+                    unique_together = [['usuario', 'turma']]
+                    ordering = ['turma', 'data']
+
+
+        Perceber que a classe Meta está dentro da classe Matricula
+
+Neste caso a classe Matricula representa a tabela intermediaria que possui os dados dos relacionamentos entre usuario e
+turma, e a classe Meta juntamente com o comando unique_together fazem com que não seja possivel que o mesmo usuario entre
+na turma mais de uma vez.
+
+O ordering é um comando para ordenar a lista por turma, caso o usuario esteja em mais de uma turma(no caso tera dois dados
+do mesmo usuario) então a ordem fica por data.
+
+"""
