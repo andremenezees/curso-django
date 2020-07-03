@@ -71,3 +71,101 @@ lados opostos.
 
 Documentação: https://docs.djangoproject.com/en/3.0/ref/models/querysets/#prefetch-related
 """
+
+
+#ManyToMany
+
+"""
+O ManyToMany serve para fazer a ligação de muitos para muitos no django, neste caso foi feita a ligação entre a classe
+Turma e a classe User, com o ManyToMany é possivel fazer a relação de muitos usuarios com muitas turmas, ou seja um
+mesmo usuario pode participar de várias turmas, assim como só de uma.
+
+Documentação: https://docs.djangoproject.com/en/3.0/ref/models/fields/#django.db.models.ManyToManyField
+"""
+
+
+#Removendo migrações
+
+"""
+        SÓ DEVE SER USADO SE AS MIGRAÇÕES NÃO ESTIVEREM AINDA NA BRANCH PRINCIPAL, SOMENTE EM DESENVOLVIMENTO.
+
+"""
+
+"""
+Para remover uma migração deve-se executar um comando que faz com que o sistema volte a uma migração anterior.
+Comando neste caso:
+
+Comando para mostrar todas as migrações:
+
+            mng showmigrations
+
+Lembrando que este comando volta para a migração selecionada.
+
+            mng migrate (titulo_da_migração) (numero_da_migração)
+
+No caso deste projeto foi:
+
+            mng migrate turmas 0001
+
+Ou seja queriamos VOLTAR para a migração 0001 da app turmas.
+
+"""
+
+ForeignKey
+
+"""
+A foreighkey e muito utilizada em aplicações com bancos de dados pois através dela é possivel relacionar uma classe com
+um modelo.
+
+Exemplo:
+
+                class Matricula(models.Model):
+                    date = models.DateTimeField(auto_now_add=True)
+                    usuario = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+                    turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
+
+
+Neste caso a classe matricula esta pegando o date( Horario e data de quando a matricula foi feita)
+Esta também relacionando o modelo usuario(get_user_model) com o classe matricula.
+E esta relacionando o modelo Turma com a classe matricula tambem.
+
+
+            class Turma(models.Model):
+                nome = models.CharField(max_length=64)
+                slug = models.SlugField(max_length=64)
+                inicio = models.DateField()
+                fim = models.DateField()
+                alunos = models.ManyToManyField(get_user_model(), through='Matricula')
+
+
+Na variavel alunos os usuarios estão sendo salvos através de uma tabela intermediaria chamada matricula com uma relação
+muitos para muitos.
+
+"""
+
+Meta
+
+"""
+A classe meta neste projeto teve a utilidade de não permitir que o mesmo usuario entre duas vezes em uma turma, através
+do comando unique_together.
+
+            class Matricula(models.Model):
+                data = models.DateTimeField(auto_now_add=True)
+                usuario = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+                turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
+
+                class Meta:
+                    unique_together = [['usuario', 'turma']]
+                    ordering = ['turma', 'data']
+
+
+        Perceber que a classe Meta está dentro da classe Matricula
+
+Neste caso a classe Matricula representa a tabela intermediaria que possui os dados dos relacionamentos entre usuario e
+turma, e a classe Meta juntamente com o comando unique_together fazem com que não seja possivel que o mesmo usuario entre
+na turma mais de uma vez.
+
+O ordering é um comando para ordenar a lista por turma, caso o usuario esteja em mais de uma turma(no caso tera dois dados
+do mesmo usuario) então a ordem fica por data.
+
+"""
