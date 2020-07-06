@@ -169,3 +169,11 @@ O ordering é um comando para ordenar a lista por turma, caso o usuario esteja e
 do mesmo usuario) então a ordem fica por data.
 
 """
+
+Controle de acesso
+
+"""
+Através da documentação abaixo e possivel implementar um sistema de controle de acesso, basicamene um sistema de login
+e senha para pode acessar algum conteudo que só poderá ser liberado pelo administrador. Além de criar uma identidade ao
+usuario.
+"""
