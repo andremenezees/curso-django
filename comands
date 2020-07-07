@@ -188,3 +188,12 @@ disso apresentar contéudo. Em geral quase todos os sites usam isso, pois sempre
 
 Documentação: https://docs.djangoproject.com/en/3.0/topics/testing/tools/#django.test.Client.force_login
 """
+
+Login_required
+
+"""
+Através do decorator Login_required é possivel limitar o aceso aos conteudos da páginas para apenas usuarios logados.
+
+Documentação: https://docs.djangoproject.com/en/3.0/topics/auth/default/#the-login-required-decorator
+
+"""
