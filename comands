@@ -176,4 +176,15 @@ Controle de acesso
 Através da documentação abaixo e possivel implementar um sistema de controle de acesso, basicamene um sistema de login
 e senha para pode acessar algum conteudo que só poderá ser liberado pelo administrador. Além de criar uma identidade ao
 usuario.
+
+https://docs.djangoproject.com/en/3.0/topics/auth/default/#module-django.contrib.auth.views
+"""
+
+Force login
+
+"""
+Este comando é muito útil e muito utilizado em desenvolvimento web, com ele é possivel deixar o usuario logado e apartir
+disso apresentar contéudo. Em geral quase todos os sites usam isso, pois sempre existem uma parte de login no site.
+
+Documentação: https://docs.djangoproject.com/en/3.0/topics/testing/tools/#django.test.Client.force_login
 """
