@@ -17,8 +17,8 @@ def conteudo(modulo):
 
 
 @pytest.fixture
-def resp(client, conteudo):
-    resp = client.get(reverse('modulos:conteudo', kwargs={'slug': conteudo.slug}))
+def resp(client_com_usuario_logado, conteudo):
+    resp = client_com_usuario_logado.get(reverse('modulos:conteudo', kwargs={'slug': conteudo.slug}))
     return resp
 
 
@@ -32,3 +32,14 @@ def test_vimeo(resp, conteudo: Conteudo):
 
 def test_modulo_breadcrumb(resp, modulo: Modulo):
     assert_contains(resp, f'<li class="breadcrumb-item"><a href="{modulo.get_absolute_url()}">{modulo.titulo}</a></li>')
+
+
+@pytest.fixture
+def resp_usuario_nao_logado(client, conteudo):
+    resp = client.get(reverse('modulos:conteudo', kwargs={'slug': conteudo.slug}))
+    return resp
+
+
+def test_usuario_nao_logado_redirect(resp_usuario_nao_logado):
+    assert resp_usuario_nao_logado.status_code == 302
+    assert resp_usuario_nao_logado.url.startswith(reverse('login'))
