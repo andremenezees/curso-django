@@ -197,3 +197,11 @@ Através do decorator Login_required é possivel limitar o aceso aos conteudos d
 Documentação: https://docs.djangoproject.com/en/3.0/topics/auth/default/#the-login-required-decorator
 
 """
+
+Backend para envio de emails
+
+"""
+Nesta documentação está presente a forma que feito o backend para envio de emails na parte de recuperação de senha.
+
+Doc: https://docs.djangoproject.com/en/3.0/topics/email/#email-backends
+"""
