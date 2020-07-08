@@ -91,7 +91,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pypro.wsgi.application'
 
-#Configuração de envio de email
+# Configuração de envio de email
 
 EMAIL_BACKEND = config('EMAIL_BACKEND')
 EMAIL_HOST = config('EMAIL_HOST')
