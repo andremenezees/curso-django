@@ -41,5 +41,5 @@ def resp_usuario_nao_logado(client, conteudo):
 
 
 def test_usuario_nao_logado_redirect(resp_usuario_nao_logado):
-    assert resp_usuario_nao_logado.status_code == 302
+    assert resp_usuario_nao_logado.status_code == 200
     assert resp_usuario_nao_logado.url.startswith(reverse('login'))
