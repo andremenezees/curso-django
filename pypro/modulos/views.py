@@ -1,4 +1,3 @@
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 from pypro.modulos import facade
@@ -15,7 +14,6 @@ def detalhe(request, slug):
     return render(request, 'modulos/modulo_detalhe.html', {'modulo': modulo, 'conteudos': conteudos})
 
 
-@login_required
 def conteudo(request, slug):
     conteudo = facade.encontrar_conteudo(slug)
     return render(request, 'modulos/conteudo_detalhe.html', {'conteudo': conteudo})

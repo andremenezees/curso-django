@@ -205,3 +205,10 @@ Nesta documentação está presente a forma que feito o backend para envio de em
 
 Doc: https://docs.djangoproject.com/en/3.0/topics/email/#email-backends
 """
+
+Comando pipenv sync -d e pipenv sync
+
+"""
+São os comandos para ativar as dependencias do piplock, caso der pull em um projeto do git é necessario utilizar esses
+comandos para ativar as dependencias que estão no piplock.
+"""
