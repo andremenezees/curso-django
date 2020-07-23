@@ -38,8 +38,3 @@ def test_modulo_breadcrumb(resp, modulo: Modulo):
 def resp_usuario_nao_logado(client, conteudo):
     resp = client.get(reverse('modulos:conteudo', kwargs={'slug': conteudo.slug}))
     return resp
-
-
-def test_usuario_nao_logado_redirect(resp_usuario_nao_logado):
-    assert resp_usuario_nao_logado.status_code == 200
-    assert resp_usuario_nao_logado.url.startswith(reverse('login'))
